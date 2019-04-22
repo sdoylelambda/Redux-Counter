@@ -16,16 +16,16 @@ export default (state = initialState, action) => {
     // return initialState + 1;
     return {
       ...state,
-      count: action.payload
+      initialState: action.payload
     }
     case DECREMENT:
     // Fill in the body of this case
-    return initialState - 1;
+    return {
+      ...state,
+      initialState: action.payload
+    }
+
     default:
-      // return state;
-      return {
-        ...state,
-        count: action.payload
-      }
+      return state;
   }
 };
